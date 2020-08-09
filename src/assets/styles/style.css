@@ -21,6 +21,7 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: red;
+  color: white;
   margin: 0;
 }
 
@@ -29,17 +30,30 @@ body {
   max-width: 70%;
   height: 100%;
   display: flex;
-  color: white;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.global-summary div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.total-global-summary {
+  width: 100%;
+  display: flex;
 }
 
-.global-summary h1 {
-    margin: 0;
+.total-global-summary div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.total-global-summary h1 {
+  margin: 0;
+}
+
+.container-main {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 36px;
+  align-items: center;
 }

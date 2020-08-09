@@ -1,31 +1,41 @@
 <!DOCTYPE html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>I-Corona</title>
 </head>
+
 <body>
-<header>
-</header>
-<main>
-    <div class="container-global-summary">
-        <div class="global-summary">
-            <div>
-                <h1 id="count-confirmed">100</h1>
-                <h3>Terkonfimasi</h2>
-            </div>
+    <header>
+    </header>
+    <main>
+        <div class="container-global-summary">
+            <div class="global-summary">
+                <div class="total-global-summary">
+                    <div>
+                        <h1 id="total-confirmed">-</h1>
+                        <h3>Terkonfimasi</h2>
+                    </div>
 
-            <div>
-                <h1 id="count-recovered">100</h1>
-                <h3>Sembuh</h2>
-            </div>
+                    <div>
+                        <h1 id="total-recovered">-</h1>
+                        <h3>Sembuh</h2>
+                    </div>
 
-            <div>
-                <h1 id="count-deaths">100</h1>
-                <h3>Meninggal</h2>
+                    <div>
+                        <h1 id="total-deaths">-</h1>
+                        <h3>Meninggal</h2>
+                    </div>
+                </div>
+                <p id="date-summary"></p>
             </div>
         </div>
-    </div>
-</main>
+
+        <div class="container-main">
+            <search-bar></search-bar>
+        </div>
+    </main>
 </body>
+
 </html>
