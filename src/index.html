@@ -8,10 +8,16 @@
 
 <body>
     <header>
+        <app-bar></app-bar>
     </header>
     <main>
-        <div class="container-global-summary">
+
+        <div class="home-container">
+            <home-content id="home"></home-content>
+        </div>
+        <div id="global-summary" class="container-global-summary">
             <div class="global-summary">
+                <h1>Statistik Kasus COVID-19</h1>
                 <div class="total-global-summary">
                     <div>
                         <h1 id="total-confirmed">-</h1>
@@ -32,110 +38,10 @@
             </div>
         </div>
 
-        <div class="container-main">
+        <div id="main" class="container-main">
             <search-bar></search-bar>
-
-            <!-- <div class="container-country-summary">
-                <h1>Indonesia</h1>
-                <div class="total-country-summary">
-                    <div>
-                        <h2 id="total-confirmed">-</h2>
-                        <h3>Terkonfimasi</h2>
-                    </div>
-
-                    <div>
-                        <h2 id="total-recovered">-</h2>
-                        <h3>Sembuh</h2>
-                    </div>
-
-                    <div>
-                        <h2 id="total-deaths">-</h2>
-                        <h3>Meninggal</h2>
-                    </div>
-                </div>
-            </div> -->
-
             <country-summary></country-summary>
             <country-list></country-list>
-            <!-- <div class="container-item">
-                
-
-                <div class="item card">
-                    <h3>Indonesia</h3>
-                    <p>Indonesia</p>
-                    <div class="container-statistic-country">
-                        <div>
-                            <p class="country-confirmed">100</p>
-                            <p>konfimasi</p>
-                        </div>
-                        <div>
-                            <p class="country-recovered">100</p>
-                            <p>sembuh</p>
-                        </div>
-                        <div>
-                            <p class="country-deaths">100</p>
-                            <p>meninggal</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item card">
-                    <h3>Indonesia</h3>
-                    <p>Indonesia</p>
-                    <div class="container-statistic-country">
-                        <div>
-                            <p class="country-confirmed">100</p>
-                            <p>konfimasi</p>
-                        </div>
-                        <div>
-                            <p class="country-recovered">100</p>
-                            <p>sembuh</p>
-                        </div>
-                        <div>
-                            <p class="country-deaths">100</p>
-                            <p>meninggal</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item card">
-                    <h3>Indonesia</h3>
-                    <p>Indonesia</p>
-                    <div class="container-statistic-country">
-                        <div>
-                            <p class="country-confirmed">100</p>
-                            <p>konfimasi</p>
-                        </div>
-                        <div>
-                            <p class="country-recovered">100</p>
-                            <p>sembuh</p>
-                        </div>
-                        <div>
-                            <p class="country-deaths">100</p>
-                            <p>meninggal</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="item card">
-                    <h3>Jawa Timur</h3>
-                    <p>Indonesia</p>
-                    <div class="container-statistic-country">
-                        <div>
-                            <p class="country-confirmed">100</p>
-                            <p>konfimasi</p>
-                        </div>
-                        <div>
-                            <p class="country-recovered">100</p>
-                            <p>sembuh</p>
-                        </div>
-                        <div>
-                            <p class="country-deaths">100</p>
-                            <p>meninggal</p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </main>
 </body>

@@ -1,3 +1,5 @@
+import './components/app-bar.js';
+import './components/home-content.js';
 import './components/search-bar.js';
 import './components/country-summary.js';
 import './components/country-list.js';
@@ -7,16 +9,16 @@ function main() {
     const searchElement = document.querySelector("search-bar");
     const countrySummaryElement = document.querySelector("country-summary");
     const countryListElement = document.querySelector("country-list");
-    
+
     const baseUrl = "https://covid.mathdro.id/api";
 
     const getGlobalSummary = async () => {
         try {
             const response = await fetch(baseUrl);
-            const responseJson =  await response.json()
+            const responseJson = await response.json()
 
             showGlobalSummary(responseJson);
-        } catch(error) {
+        } catch (error) {
 
         }
     }
@@ -25,7 +27,7 @@ function main() {
         try {
             const response = await fetch(`${baseUrl}/countries/${country}/confirmed`);
             const responseJson = await response.json();
-            
+
             showCountryList(responseJson);
         } catch (error) {
 
@@ -36,7 +38,7 @@ function main() {
         try {
             const response = await fetch(`${baseUrl}/countries/${country}`);
             const responseJson = await response.json();
-            
+
             showCountrySummary(country, responseJson);
         } catch (error) {
 

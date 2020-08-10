@@ -17,11 +17,25 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  background-color: #e73626;
+  position: fixed;
+  top: 0;
+}
+
+main {
+  padding-bottom: 32px;
+}
+
+.home-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e73626;
+}
+
 .container-global-summary {
   height: 100vh;
   width: 100vw;
-  background-color: red;
-  color: white;
   margin: 0;
 }
 
@@ -38,6 +52,7 @@ body {
 .total-global-summary {
   width: 100%;
   display: flex;
+  margin-top: 100px;
 }
 
 .total-global-summary div {
@@ -59,7 +74,7 @@ main {
 .container-main {
   width: 80%;
   height: 100vh;
-  padding-top: 36px;
+  padding-top: 100px;
   margin: 0 auto;
 }
 
@@ -67,5 +82,33 @@ country-list {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  margin: 24px 0;
+  margin: 32px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+
+  .navbar-container {
+    max-width: 85%;
+    min-width: 85%;
+  }
+
+  .total-global-summary {
+    flex-direction: column;
+    margin-top: 8px;
+  }
+
+  .total-global-summary div {
+    margin-top: 16px;
+  }
+
+  .total-global-summary h1 {
+    font-size: 2em;
+  }
+
+  .container-main {
+    max-width: 85%;
+    min-width: 85%;
+  }
 }

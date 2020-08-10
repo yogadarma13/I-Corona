@@ -20,6 +20,7 @@ class CountrySummary extends HTMLElement {
             text-align: center;
             display: flex;
             flex-direction: column;
+            margin-top: 80px;
           }
           
           .total-country-summary {

@@ -28,8 +28,13 @@ class CountryItem extends HTMLElement {
             margin: 8px 16px;
           }
           
-          .item h3, p {
+          .item h3 {
             margin: 0;
+          }
+
+          .item p {
+            margin: 0;
+            font-size: 0.8em;
           }
           
           .container-statistic-country {
@@ -61,7 +66,7 @@ class CountryItem extends HTMLElement {
                     <p>meninggal</p>
                 </div>
              </div>
-        </div>`
+        </div>`;
     }
 }
 
