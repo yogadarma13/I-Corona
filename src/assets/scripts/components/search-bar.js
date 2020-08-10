@@ -22,7 +22,7 @@ class SearchBar extends HTMLElement {
         this.shadowDOM.innerHTML = `
         <style>       
           .container-search {
-            width: 70%;
+            width: 100%;
             display: flex;
             margin: 0 auto;
           }
