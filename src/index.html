@@ -11,39 +11,21 @@
         <app-bar></app-bar>
     </header>
     <main>
-
         <div class="home-container">
             <home-content id="home"></home-content>
         </div>
         <div id="global-summary" class="container-global-summary">
-            <div class="global-summary">
-                <h1>Statistik Kasus COVID-19</h1>
-                <div class="total-global-summary">
-                    <div>
-                        <h1 id="total-confirmed">-</h1>
-                        <h3>Terkonfimasi</h2>
-                    </div>
-
-                    <div>
-                        <h1 id="total-recovered">-</h1>
-                        <h3>Sembuh</h2>
-                    </div>
-
-                    <div>
-                        <h1 id="total-deaths">-</h1>
-                        <h3>Meninggal</h2>
-                    </div>
-                </div>
-                <p id="date-summary"></p>
-            </div>
+            <global-summary></global-summary>
         </div>
-
-        <div id="main" class="container-main">
+        <div id="search" class="container-search">
             <search-bar></search-bar>
             <country-summary></country-summary>
             <country-list></country-list>
         </div>
     </main>
+    <footer>
+        <p>I-CORONA &#169; 2020, Yoga Corporation</p>
+    </footer>
 </body>
 
 </html>

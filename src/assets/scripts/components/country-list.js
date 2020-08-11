@@ -1,14 +1,18 @@
-import "./country-item.js";
+import './country-item.js';
 
 class CountryList extends HTMLElement {
     constructor() {
         super();
-        this.shadowDOM = this.attachShadow({mode: "open"});
+        this.shadowDOM = this.attachShadow({ mode: "open" });
     }
-    
+
     set countries(countries) {
         this._countries = countries;
         this.render();
+    }
+
+    renderError() {
+        this.shadowDOM.innerHTML = "";
     }
 
     render() {

@@ -12,6 +12,10 @@ class CountrySummary extends HTMLElement {
         this.render();
     };
 
+    renderError() {
+        this.shadowDOM.innerHTML = "";
+    }
+
     render() {
         this.shadowDOM.innerHTML = `
         <style>
@@ -42,24 +46,24 @@ class CountrySummary extends HTMLElement {
           }
         </style>
         <div class="container-country-summary">
-                <h1>${this._country.toUpperCase()}</h1>
-                <div class="total-country-summary">
-                    <div>
-                        <h2 id="total-confirmed">${this._summary.confirmed.value}</h2>
-                        <h3>Terkonfimasi</h2>
-                    </div>
-
-                    <div>
-                        <h2 id="total-recovered">${this._summary.recovered.value}</h2>
-                        <h3>Sembuh</h2>
-                    </div>
-
-                    <div>
-                        <h2 id="total-deaths">${this._summary.deaths.value}</h2>
-                        <h3>Meninggal</h2>
-                    </div>
+            <h1>${this._country.toUpperCase()}</h1>
+            <div class="total-country-summary">
+                <div>
+                    <h2 id="total-confirmed">${this._summary.confirmed.value}</h2>
+                    <h3>Terkonfimasi</h2>
                 </div>
-            </div>`;
+
+                <div>
+                    <h2 id="total-recovered">${this._summary.recovered.value}</h2>
+                    <h3>Sembuh</h2>
+                </div>
+
+                <div>
+                    <h2 id="total-deaths">${this._summary.deaths.value}</h2>
+                    <h3>Meninggal</h2>
+                </div>
+            </div>
+        </div>`;
     }
 }
 

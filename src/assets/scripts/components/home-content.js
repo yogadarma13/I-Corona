@@ -57,19 +57,19 @@ class HomeContent extends HTMLElement {
           }
         </style>
         <article class="home">
-        <img class="home-image" src=${IlustrationImage} alt="Cegah Corona" />
-                <div class="text-home">
-                    <h1>
-                        I-CORONA
-                    </h1>
-                    <p>
-                        I-Corona adalah aplikasi web yang menyediakan informasi mengenai statistik jumlah kasus COVID-19.
-                        Statistik tersebut meliputi jumlah kasus yang terkonfirmasi, sembuh dan meninggal secara global.</br></br>
-                        Selain itu aplikasi web ini dapat memberikan statistik jumlah kasus COVID-19 berdasarkan Negara 
-                        dan detail statistik kota - kota pada negara tersebut.
-                    </p>
-                </div>
-                </article>`;
+            <img class="home-image" src=${IlustrationImage} alt="Cegah Corona" />
+            <div class="text-home">
+                <h1>
+                    I-CORONA
+                </h1>
+                <p>
+                    I-Corona (Info Corona) adalah aplikasi web yang menyediakan informasi mengenai statistik jumlah kasus COVID-19.
+                    Statistik tersebut meliputi jumlah kasus yang terkonfirmasi, sembuh dan meninggal secara global.</br></br>
+                    Selain itu aplikasi web ini dapat memberikan statistik jumlah kasus COVID-19 berdasarkan Negara 
+                    dan detail statistik kota - kota pada negara tersebut.
+                </p>
+            </div>
+        </article>`;
     }
 }
 

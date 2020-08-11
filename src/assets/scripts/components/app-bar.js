@@ -86,7 +86,7 @@ class AppBar extends HTMLElement {
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#global-summary">Statistik Global</a></li>
-                    <li><a href="#main">Pencarian</a></li>
+                    <li><a href="#search">Pencarian</a></li>
                 </ul>
             </nav>
         </div>`;

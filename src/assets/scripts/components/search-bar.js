@@ -1,25 +1,25 @@
 class SearchBar extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.shadowDOM = this.attachShadow({ mode: "open" });
-    }
+    this.shadowDOM = this.attachShadow({ mode: "open" });
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    set clickEvent(event) {
-        this._clickEvent = event;
-        this.render();
-    }
+  set clickEvent(event) {
+    this._clickEvent = event;
+    this.render();
+  }
 
-    get value() {
-        return this.shadowDOM.querySelector("#search").value;
-    }
+  get value() {
+    return this.shadowDOM.querySelector("#search").value;
+  }
 
-    render() {
-        this.shadowDOM.innerHTML = `
+  render() {
+    this.shadowDOM.innerHTML = `
         <style>       
           .container-search {
             width: 100%;
@@ -29,7 +29,7 @@ class SearchBar extends HTMLElement {
             justify-content: space-between;
           }
 
-          .container-search h1 {
+          .container-search > h1 {
             margin: 0;
           }
 
@@ -79,6 +79,10 @@ class SearchBar extends HTMLElement {
               align-items: start;
             }
 
+            .container-search h1 {
+              font-size: 1.5em;
+            }
+
             .container-search div {
               width: 100%;
               margin-top: 16px;
@@ -87,16 +91,16 @@ class SearchBar extends HTMLElement {
         
         </style>
         <div class="container-search">
-            <h1>Statistik berdasarkan negara</h1>
+            <h1>Statistik per negara</h1>
             <div>
-              <input id="search" type="text" autocomplete="off" placeholder="Cari negara" name="search">
-              <button id="searchButton" type="submit">Cari</button>
+              <input id="search" type="text" autocomplete="off" placeholder="Cari negara" required>
+              <button id="searchButton">Cari</button>
             </div>
         </div>
         `;
 
-        this.shadowDOM.querySelector("#searchButton").addEventListener("click", this._clickEvent);
-    }
+    this.shadowDOM.querySelector("#searchButton").addEventListener("click", this._clickEvent);
+  }
 }
 
 customElements.define("search-bar", SearchBar);

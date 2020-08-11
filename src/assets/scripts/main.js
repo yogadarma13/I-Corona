@@ -1,67 +1,61 @@
-import './components/app-bar.js';
-import './components/home-content.js';
+import './components/global-summary.js';
 import './components/search-bar.js';
 import './components/country-summary.js';
 import './components/country-list.js';
+import NotFound from '../images/not_found.png';
 
 function main() {
 
+    const globalSummaryElement = document.querySelector("global-summary");
     const searchElement = document.querySelector("search-bar");
     const countrySummaryElement = document.querySelector("country-summary");
     const countryListElement = document.querySelector("country-list");
+    const containerSearchElement = document.getElementById("search");
 
     const baseUrl = "https://covid.mathdro.id/api";
 
     const getGlobalSummary = async () => {
+        showGlobalSummary("");
         try {
             const response = await fetch(baseUrl);
             const responseJson = await response.json()
 
             showGlobalSummary(responseJson);
         } catch (error) {
-
+            showGlobalSummary("");
         }
     }
 
     const getDetailByCountry = async country => {
         try {
-            const response = await fetch(`${baseUrl}/countries/${country}/confirmed`);
-            const responseJson = await response.json();
+            const responseSummary = await fetch(`${baseUrl}/countries/${country}`);
+            const responseSummaryJson = await responseSummary.json();
 
-            showCountryList(responseJson);
+            const responseDetail = await fetch(`${baseUrl}/countries/${country}/confirmed`);
+            const responseDetailJson = await responseDetail.json();
+
+            containerSearchElement.style.backgroundImage = "none";
+            containerSearchElement.style.height = "fit-content";
+
+            showCountrySummary(country, responseSummaryJson);
+            showCountryList(responseDetailJson);
+
         } catch (error) {
-
-        }
-    }
-
-    const getSummaryByCountry = async country => {
-        try {
-            const response = await fetch(`${baseUrl}/countries/${country}`);
-            const responseJson = await response.json();
-
-            showCountrySummary(country, responseJson);
-        } catch (error) {
-
+            removeCountry();
+            containerSearchElement.style.backgroundImage = `url(${NotFound})`;
+            containerSearchElement.style.height = "100vh";
         }
     }
 
     const onButtonSearchClicked = () => {
-        getSummaryByCountry(searchElement.value);
-        getDetailByCountry(searchElement.value);
+        if (searchElement.value != "") {
+            getDetailByCountry(searchElement.value);
+        }
     }
 
-    const showGlobalSummary = response => {
-        const confirmedElement = document.getElementById("total-confirmed");
-        confirmedElement.innerText = response.confirmed.value;
+    const showGlobalSummary = summary => {
+        globalSummaryElement.summary = summary;
 
-        const recoveredElement = document.getElementById("total-recovered");
-        recoveredElement.innerText = response.recovered.value
-
-        const deathsElement = document.getElementById("total-deaths");
-        deathsElement.innerText = response.deaths.value
-
-        const dateElement = document.getElementById("date-summary");
-        dateElement.innerText = dateConvert(response.lastUpdate)
     }
 
     const showCountrySummary = (country, summary) => {
@@ -72,11 +66,9 @@ function main() {
         countryListElement.countries = countries;
     }
 
-    const dateConvert = responseDate => {
-        let date = String(new Date(responseDate));
-        let splitDate = date.split(" ");
-
-        return `Update terakhir: ${splitDate[2]} ${splitDate[1]} ${splitDate[3]}`;
+    const removeCountry = () => {
+        countrySummaryElement.renderError();
+        countryListElement.renderError();
     }
 
     getGlobalSummary();
